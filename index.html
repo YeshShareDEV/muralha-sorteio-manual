@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de Operação · Sorteio de Brindes · Grupo Muralha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red-deep: #bb0014; --red: #f7011a; --gray: #e6e6e6; --ink: #1d1717;
+    --bg: #f4f4f4; --surface: #fff; --dim: #6a6060; --line: rgba(29,23,23,.14);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--red-deep); }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ---------- capa ---------- */
+  .cover { background: radial-gradient(120% 140% at 50% 0%, var(--red), var(--red-deep)); color: #fff; padding: 56px 24px 64px; text-align: center; }
+  .cover .plate { display: inline-flex; align-items: center; gap: 14px; background: #fff; color: var(--ink); padding: 14px 24px; border-top: 6px solid var(--ink); box-shadow: 0 14px 30px -14px rgba(0,0,0,.5); text-align: left; }
+  .cover .plate img { height: 64px; width: auto; }
+  .cover .plate small { display: block; font-size: 12px; letter-spacing: .24em; font-weight: 500; }
+  .cover .plate strong { display: block; font-size: 32px; letter-spacing: .05em; font-weight: 800; line-height: 1.1; }
+  .cover .plate em { display: block; font-style: normal; font-size: 11px; letter-spacing: .2em; font-weight: 700; color: var(--red-deep); }
+  .cover h1 { margin: 36px 0 8px; font-size: clamp(30px, 5vw, 52px); line-height: 1.05; letter-spacing: -.02em; font-weight: 800; }
+  .cover p { margin: 0; opacity: .92; font-size: 18px; }
+  .cover .ver { margin-top: 22px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+
+  /* ---------- layout ---------- */
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 80px; display: grid; grid-template-columns: 250px 1fr; gap: 36px; }
+  nav.toc { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--red); padding: 18px 16px; font-size: 14px; }
+  nav.toc p { margin: 0 0 8px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); font-weight: 800; }
+  nav.toc a { display: block; padding: 5px 8px; border-left: 3px solid transparent; text-decoration: none; color: var(--ink); }
+  nav.toc a:hover { border-left-color: var(--red); background: var(--bg); }
+  main { min-width: 0; }
+  section { background: var(--surface); border: 1px solid var(--line); padding: 30px 34px; margin-bottom: 28px; box-shadow: 0 18px 44px -30px rgba(29,23,23,.35); }
+  h2 { margin: 0 0 16px; font-size: 28px; letter-spacing: -.01em; font-weight: 800; padding-bottom: 12px; border-bottom: 3px solid var(--red); }
+  h2 .n { color: var(--red); margin-right: 8px; }
+  h3 { margin: 30px 0 10px; font-size: 19px; font-weight: 800; }
+  h3 .n { color: var(--red); margin-right: 6px; }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  code, kbd { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: .9em; background: var(--bg); border: 1px solid var(--line); padding: 1px 6px; border-radius: 3px; }
+  kbd { background: #fff; box-shadow: 0 2px 0 var(--line); font-weight: 700; }
+  pre { background: var(--ink); color: #f1f1f1; padding: 14px 16px; overflow: auto; font-size: 13.5px; line-height: 1.5; margin: 0 0 14px; }
+  pre code { background: none; border: 0; padding: 0; color: inherit; }
+
+  /* ---------- blocos ---------- */
+  .note, .warn { padding: 12px 16px; margin: 14px 0; border-left: 5px solid; font-size: 15px; }
+  .note { background: #eef3ff; border-color: #4a6fd1; }
+  .warn { background: #fdecee; border-color: var(--red-deep); }
+  .note b:first-child, .warn b:first-child { display: block; text-transform: uppercase; letter-spacing: .1em; font-size: 12px; margin-bottom: 2px; }
+  figure { margin: 18px 0 22px; }
+  figure img { border: 1px solid var(--line); box-shadow: 0 10px 28px -16px rgba(29,23,23,.5); background: #fff; }
+  figcaption { margin-top: 8px; font-size: 13.5px; color: var(--dim); }
+  .legend { list-style: none; counter-reset: lg; padding: 0; margin: 12px 0 18px; }
+  .legend li { counter-increment: lg; position: relative; padding: 4px 0 4px 40px; min-height: 30px; }
+  .legend li::before { content: counter(lg); position: absolute; left: 0; top: 3px; width: 28px; height: 28px; border-radius: 50%; background: var(--red); color: #fff; font-weight: 800; font-size: 14px; line-height: 28px; text-align: center; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--red); }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start; }
+  .phones { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; align-items: start; }
+  .phones figure { margin: 0; }
+  .phones img { max-height: 520px; width: auto; margin: 0 auto; }
+  .phones figcaption { text-align: center; }
+  .video video { width: 100%; background: #000; border: 1px solid var(--line); box-shadow: 0 14px 34px -18px rgba(29,23,23,.6); }
+  .video .print-only { display: none; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 14.5px; }
+  th { text-align: left; background: var(--ink); color: #fff; padding: 9px 12px; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; }
+  td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: #fafafa; }
+  .yes { color: #19703a; font-weight: 800; } .no { color: var(--red-deep); font-weight: 800; }
+  .check { list-style: none; padding: 0; }
+  .check li { padding-left: 34px; position: relative; margin: 8px 0; }
+  .check li::before { content: ''; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border: 2px solid var(--ink); background: #fff; }
+  .flow { display: flex; flex-wrap: wrap; gap: 10px; align-items: stretch; margin: 16px 0; }
+  .flow div { flex: 1 1 118px; background: var(--bg); border: 1px solid var(--line); border-top: 4px solid var(--red); padding: 12px 14px; font-size: 14px; position: relative; }
+  .flow div b { display: block; font-size: 22px; color: var(--red); line-height: 1; margin-bottom: 4px; }
+  .pill { display: inline-block; padding: 1px 8px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; border-radius: 3px; letter-spacing: .04em; }
+
+  footer { text-align: center; color: var(--dim); font-size: 13px; padding: 10px 0 40px; }
+
+  @media (max-width: 980px) { .wrap { grid-template-columns: 1fr; } nav.toc { position: static; max-height: none; } section { padding: 22px 18px; } }
+
+  /* ---------- impressao / PDF ---------- */
+  @media print {
+    @page { size: A4; margin: 14mm 12mm; }
+    body { background: #fff; font-size: 11pt; }
+    .wrap { display: block; padding: 0; max-width: none; }
+    nav.toc { display: none; }
+    section { box-shadow: none; border: 0; border-top: 3px solid var(--red); padding: 12px 0 4px; margin: 0 0 6mm; }
+    h2 { page-break-after: avoid; border: 0; padding: 0; }
+    h3, figure, table, .note, .warn, .legend, .flow { page-break-inside: avoid; }
+    figure img { box-shadow: none; max-height: 120mm; width: auto; margin: 0 auto; }
+    .phones img { max-height: 90mm; }
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 28mm 10mm; page-break-after: always; }
+    th, .legend li::before, .pill, pre, .flow div, .note, .warn, tr:nth-child(even) td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .video video { display: none; }
+    .video .print-only { display: block; }
+    a { color: var(--ink); text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="plate"><img src="img/logo-shield.svg" alt=""><div><small>GRUPO</small><strong>MURALHA</strong><em>DESDE 1993</em></div></div>
+  <h1>Manual de Operação</h1>
+  <p>Sorteio de brindes ao vivo — nuvem de participantes, 3 vencedores e sorteios extras</p>
+  <div class="ver">Versão 1.0 · 05/11/2026</div>
+  <p style="margin-top:18px"><a href="Manual-Operacao-Sorteio-Muralha.pdf" style="color:#fff;font-weight:700;border:2px solid #fff;padding:8px 18px;text-decoration:none;display:inline-block">Baixar em PDF</a></p>
+</header>
+
+<div class="wrap">
+<nav class="toc" aria-label="Índice">
+  <p>Índice</p>
+  <a href="#visao">1. Visão geral</a>
+  <a href="#antes">2. Antes do evento</a>
+  <a href="#acesso">3. Entrar no telão e no painel</a>
+  <a href="#telao">4. Conhecendo o telão</a>
+  <a href="#painel">5. Conhecendo o painel</a>
+  <a href="#celular">6. O que o participante vê</a>
+  <a href="#passos">7. Passo a passo do sorteio</a>
+  <a href="#depois">8. Depois do evento</a>
+  <a href="#regras">9. Regras e transparência</a>
+  <a href="#problemas">10. Problemas e soluções</a>
+  <a href="#rapida">11. Referência rápida</a>
+</nav>
+
+<main>
+
+<!-- =============================================================== 1 -->
+<section id="visao">
+  <h2><span class="n">1.</span>Visão geral</h2>
+  <p>O sistema faz o sorteio de brindes do evento <b>ao vivo, na frente do público</b>. Os participantes se cadastram pelo celular (QR code), os nomes aparecem numa <b>nuvem</b> no telão e o operador dispara o sorteio por um botão na própria tela da nuvem. O resultado mostra o <b>nome completo</b> e o <b>telefone parcial</b> dos ganhadores.</p>
+
+  <div class="flow">
+    <div><b>1</b>Participantes escaneiam o QR e se cadastram no celular</div>
+    <div><b>2</b>Os nomes aparecem na nuvem do telão</div>
+    <div><b>3</b>O operador clica em <i>Sortear 3 vencedores</i></div>
+    <div><b>4</b>Animação e revelação dos 3 vencedores</div>
+    <div><b>5</b>(Opcional) Sorteios extras, 1 nome por vez</div>
+  </div>
+
+  <h3>As três telas</h3>
+  <table>
+    <tr><th>Tela</th><th>Endereço</th><th>Quem usa</th><th>Acesso</th></tr>
+    <tr><td><b>Cadastro</b></td><td><code>/cadastro/</code> (é o do QR code)</td><td>Participantes, no celular</td><td>Público, sem PIN</td></tr>
+    <tr><td><b>Telão</b></td><td><code>/telao/</code></td><td>Projetor / TV do evento. Tem o botão de sortear</td><td>PIN do operador</td></tr>
+    <tr><td><b>Painel</b></td><td><code>/admin/</code></td><td>Operador (notebook)</td><td>PIN do operador</td></tr>
+  </table>
+  <p>O endereço completo é o do evento, por exemplo <code>https://sorteiomuralha.yesh.com.br/telao/</code>.</p>
+
+  <h3>O que você precisa no dia</h3>
+  <ul>
+    <li>Um computador ligado ao projetor/TV, com o navegador <b>Chrome</b> aberto no telão em <b>tela cheia</b>.</li>
+    <li>Um notebook (pode ser o mesmo, em outra janela) com o <b>painel</b> aberto.</li>
+    <li>Internet estável nos dois e o <b>PIN do operador</b> (definido por quem instalou o sistema).</li>
+  </ul>
+  <div class="note"><b>Dica</b>O sistema funciona em qualquer navegador moderno, mas o Chrome é o mais testado. Mantenha o notebook na tomada e desative a suspensão de tela.</div>
+</section>
+
+<!-- =============================================================== 2 -->
+<section id="antes">
+  <h2><span class="n">2.</span>Antes do evento (checklist)</h2>
+  <p>Faça este roteiro de preferência <b>no dia anterior</b>, e repita o essencial 30 minutos antes de abrir as portas.</p>
+  <ul class="check">
+    <li><b>Sistema no ar.</b> Abra o endereço do telão. Se aparecer a tela de PIN, está funcionando.</li>
+    <li><b>QR code.</b> No telão, aponte a câmera de um celular para o QR e confirme que abre o formulário de cadastro.</li>
+    <li><b>Ensaio completo.</b> No painel, em <i>Teste e demonstração</i>, crie 30 participantes de teste, faça um sorteio no telão e confira o resultado.</li>
+    <li><b>Limpar o ensaio.</b> Ainda em <i>Teste e demonstração</i>, use <b>Zerar tudo</b> (digite <code>ZERAR</code>). Isso apaga cadastros, sorteios e fakes de teste.</li>
+    <li><b>Sorteios extras.</b> Defina no painel quantos extras haverá (0 a 8).</li>
+    <li><b>Fakes (opcional).</b> Decida se vai usar nomes fakes para dar volume à nuvem no começo (seção 5).</li>
+    <li><b>Telão em tela cheia.</b> Abra o telão, digite o PIN e aperte <kbd>F</kbd>.</li>
+    <li><b>Inscrições abertas.</b> No painel, o botão deve mostrar <i>Inscrições: ABERTAS</i>.</li>
+  </ul>
+  <div class="warn"><b>Atenção</b>Nunca use <i>Zerar tudo</i> durante o evento: apaga também os cadastros reais e os resultados.</div>
+</section>
+
+<!-- =============================================================== 3 -->
+<section id="acesso">
+  <h2><span class="n">3.</span>Entrar no telão e no painel</h2>
+  <p>As duas telas pedem o <b>PIN do operador</b>. Ninguém vê os nomes do sorteio sem digitá-lo, mesmo que descubra o endereço.</p>
+
+  <h3><span class="n">3.1</span>Telão</h3>
+  <div class="grid2">
+    <figure><img src="img/01-telao-pin.png" alt="Tela de PIN do telão"><figcaption>Ao abrir o telão aparece a janela de acesso.</figcaption></figure>
+    <figure><img src="img/02-telao-pin-erro.png" alt="PIN incorreto no telão"><figcaption>PIN errado: aparece o aviso e o campo é limpo. O ícone do olho mostra o que foi digitado.</figcaption></figure>
+  </div>
+  <ol>
+    <li>Abra o endereço do telão no navegador.</li>
+    <li>Digite o PIN e clique em <b>Entrar</b> (ou aperte <kbd>Enter</kbd>).</li>
+    <li>Aperte <kbd>F</kbd> (ou dê um duplo clique na nuvem) para entrar em tela cheia. <kbd>Esc</kbd> sai.</li>
+  </ol>
+  <div class="note"><b>Bom saber</b>O PIN fica guardado <b>nessa aba</b>: atualizar a página (<kbd>F5</kbd>) não pede de novo, mas fechar a aba ou abrir em outro navegador pede. Depois de <b>8 PINs errados</b> o acesso fica bloqueado por <b>10 minutos</b>.</div>
+
+  <h3><span class="n">3.2</span>Painel do operador</h3>
+  <figure style="max-width:560px"><img src="img/04-admin-login.png" alt="Login do painel"><figcaption>Mesmo PIN, mesma janela. Ao entrar, o painel abre com o resumo.</figcaption></figure>
+</section>
+
+<!-- =============================================================== 4 -->
+<section id="telao">
+  <h2><span class="n">4.</span>Conhecendo o telão</h2>
+  <p>É a tela que o público vê. Enquanto não há sorteio, mostra a nuvem com os nomes.</p>
+  <figure>
+    <img src="img/03-telao-vazio.png" alt="Telão vazio com marcadores">
+    <figcaption>Telão sem participantes ainda (o botão está desabilitado).</figcaption>
+  </figure>
+  <ol class="legend">
+    <li><b>Logotipo</b> do Grupo Muralha.</li>
+    <li><b>Contador “concorrendo”</b>: total de nomes na nuvem (cadastros reais + fakes). Cai quando os vencedores saem da nuvem.</li>
+    <li><b>QR code</b> para o público se cadastrar, com o endereço escrito embaixo.</li>
+    <li><b>Botão do operador</b>: é aqui que se dispara o sorteio.</li>
+  </ol>
+  <div class="note"><b>Sobre as imagens deste manual</b>Elas foram feitas num ambiente de demonstração, com nomes de mentira. Por isso o endereço escrito embaixo do QR (<code>127.0.0.1:3300/cadastro</code>) e os nomes são fictícios. No evento aparece o endereço público de verdade, e o PIN de acesso não é mostrado em lugar nenhum do manual.</div>
+
+  <figure>
+    <img src="img/11-telao-nuvem.png" alt="Telão com a nuvem cheia">
+    <figcaption>Com participantes: os nomes ocupam a tela e o botão fica ativo. Sempre que alguém se cadastra, o nome entra com um brilho e aparece o aviso “fulano entrou no sorteio” no canto.</figcaption>
+  </figure>
+
+  <h3>O botão do operador</h3>
+  <table>
+    <tr><th>O que está escrito</th><th>Significa</th></tr>
+    <tr><td><span class="pill">Aguardando participantes (0/3)</span></td><td>Ainda há menos de 3 cadastros reais elegíveis. O botão fica cinza e não funciona.</td></tr>
+    <tr><td><span class="pill">Sortear 3 vencedores</span></td><td>Pronto para o sorteio principal.</td></tr>
+    <tr><td><span class="pill">Sortear prêmio extra 1 de 2</span></td><td>O principal já foi revelado e há extras pendentes. Aparece em branco sobre o fundo vermelho.</td></tr>
+    <tr><td><i>(botão sumiu)</i></td><td>Há um sorteio em andamento, ou a rodada terminou (todos os extras feitos). Veja a seção 7.5.</td></tr>
+  </table>
+
+  <h3>Inscrições encerradas</h3>
+  <figure style="max-width:760px"><img src="img/33-telao-inscricoes-encerradas.png" alt="QR trocado por Inscrições encerradas"><figcaption>Quando as inscrições são encerradas no painel, o QR code dá lugar ao aviso “Inscrições encerradas”.</figcaption></figure>
+  <p>Se a conexão cair, aparece “Reconectando…” na parte de baixo e o telão volta sozinho, sem perder nada.</p>
+</section>
+
+<!-- =============================================================== 5 -->
+<section id="painel">
+  <h2><span class="n">5.</span>Conhecendo o painel</h2>
+
+  <h3><span class="n">5.1</span>Resumo e controles</h3>
+  <figure>
+    <img src="img/05-admin-resumo.png" alt="Resumo do painel">
+  </figure>
+  <ol class="legend">
+    <li><b>Números</b>: cadastrados (reais e de teste), concorrendo (elegíveis ao sorteio, ou seja, que ainda não ganharam), sorteios (rodadas) e fakes na nuvem.</li>
+    <li><b>Abrir telão</b>: atalho para o endereço do telão.</li>
+    <li><b>Inscrições ABERTAS / ENCERRADAS</b>: abre ou fecha o cadastro pelo celular. Quem tentar se cadastrar depois de encerrado vê a mensagem “Inscrições encerradas”.</li>
+    <li><b>Limpar telão</b>: tira os vencedores da tela e volta para a nuvem (veja 7.5). Só fica ativo depois de um sorteio.</li>
+    <li><b>Sorteios extras</b>: quantos sorteios de 1 nome vêm depois do principal.</li>
+  </ol>
+  <div class="note"><b>Importante</b>O botão de sortear <b>não fica no painel</b>: ele fica no telão. O painel serve para configurar e acompanhar.</div>
+
+  <h3><span class="n">5.2</span>Sorteios extras</h3>
+  <figure style="max-width:620px"><img src="img/15-admin-extras.png" alt="Controle de sorteios extras"></figure>
+  <ol class="legend">
+    <li><b>−</b> diminui a quantidade de extras (não desce abaixo dos que já foram sorteados).</li>
+    <li><b>Quantidade</b> atual (0 a 8). Com 0, só há o sorteio principal de 3.</li>
+    <li><b>+</b> aumenta. Pode aumentar mesmo depois do sorteio principal.</li>
+    <li><b>Aviso</b> com o andamento (ex.: “1 de 2 já sorteados nesta rodada”).</li>
+  </ol>
+
+  <h3><span class="n">5.3</span>Participantes</h3>
+  <figure><img src="img/12-admin-participantes.png" alt="Tabela de participantes"></figure>
+  <ol class="legend">
+    <li><b>Título com o total</b>: “Participantes (X cadastrados)”. Se houver participantes de teste, mostra também quantos são.</li>
+    <li><b>Busca</b> por nome, e-mail, telefone ou @instagram.</li>
+    <li><b>Remover</b>: clique uma vez (o botão pede “Confirmar?”) e clique de novo. Ganhadores não podem ser removidos.</li>
+    <li><b>Etiqueta “teste”</b> marca os participantes de demonstração. Ganhadores aparecem com uma estrela vermelha ★ ao lado do nome.</li>
+  </ol>
+
+  <h3><span class="n">5.4</span>Fakes (nomes para dar volume à nuvem)</h3>
+  <figure><img src="img/13-admin-fakes.png" alt="Bloco de fakes"></figure>
+  <ol class="legend">
+    <li><b>Título</b>: “Fakes (X na nuvem)”.</li>
+    <li><b>Quantidade</b> a adicionar (de 1 a 200 por vez).</li>
+    <li><b>Adicionar fakes</b>: criam nomes comuns e únicos, que entram discretamente na nuvem (sem brilho e sem aviso).</li>
+    <li><b>Remover todos</b> (pede confirmação).</li>
+    <li><b>Remover</b> um fake específico.</li>
+  </ol>
+  <div class="warn"><b>Atenção</b>Fakes <b>contam no contador do telão</b>, mas <b>não têm nenhuma chance de ganhar</b> e não entram nos CSVs. Ao removê-los, o nome <b>continua na nuvem</b> até o telão ser atualizado (<kbd>F5</kbd>): a remoção é silenciosa de propósito, para não chamar atenção.</div>
+
+  <h3><span class="n">5.5</span>Teste e demonstração</h3>
+  <figure><img src="img/14-admin-teste.png" alt="Bloco de teste e demonstração"></figure>
+  <ol class="legend">
+    <li><b>Quantidade</b> de participantes de teste (até 500).</li>
+    <li><b>Chegando aos poucos</b>: em vez de criar todos de uma vez, simula inscrições ao vivo (1 a cada ~0,7 s, até 100), com brilho e aviso no telão. Ótimo para demonstrar.</li>
+    <li><b>Criar participantes de teste</b>: nomes de mentira com e-mail <code>@example.com</code>. <b>Eles entram no sorteio.</b></li>
+    <li><b>Remover os de teste</b>: apaga os de teste que ainda não ganharam (pede confirmação). Os ganhadores de teste ficam no registro até o <i>Zerar tudo</i>.</li>
+    <li><b>Campo de confirmação</b>: digite <code>ZERAR</code>.</li>
+    <li><b>Zerar tudo</b>: apaga cadastros, sorteios e fakes. Use só antes do evento.</li>
+  </ol>
+
+  <h3><span class="n">5.6</span>Quem é quem</h3>
+  <table>
+    <tr><th></th><th>Cadastro real</th><th>Participante de teste</th><th>Fake</th></tr>
+    <tr><td>Entra no sorteio</td><td class="yes">Sim</td><td class="yes">Sim</td><td class="no">Não</td></tr>
+    <tr><td>Aparece na nuvem</td><td class="yes">Sim</td><td class="yes">Sim</td><td class="yes">Sim</td></tr>
+    <tr><td>Conta no contador do telão</td><td class="yes">Sim</td><td class="yes">Sim</td><td class="yes">Sim</td></tr>
+    <tr><td>Aparece nos CSVs</td><td class="yes">Sim</td><td class="yes">Sim (coluna “teste”)</td><td class="no">Não</td></tr>
+    <tr><td>Como remover</td><td>Botão Remover (um a um)</td><td>Remover os de teste</td><td>Silencioso: some só ao atualizar o telão</td></tr>
+  </table>
+</section>
+
+<!-- =============================================================== 6 -->
+<section id="celular">
+  <h2><span class="n">6.</span>O que o participante vê no celular</h2>
+  <p>Ao escanear o QR, o participante preenche: <b>nome completo</b>, <b>telefone/WhatsApp com DDD</b>, <b>e-mail</b>, <b>Instagram</b> (opcional) e aceita o termo de uso dos dados (LGPD).</p>
+  <div class="phones">
+    <figure><img src="img/06-cadastro-form.png" alt="Formulário"><figcaption><b>Formulário</b></figcaption></figure>
+    <figure><img src="img/07-cadastro-erros.png" alt="Erros de preenchimento"><figcaption><b>Campos faltando</b>: avisa o que corrigir</figcaption></figure>
+    <figure><img src="img/08-cadastro-sucesso.png" alt="Cadastro feito"><figcaption><b>Sucesso</b>: o nome já está na nuvem</figcaption></figure>
+    <figure><img src="img/09-cadastro-duplicado.png" alt="Já cadastrado"><figcaption><b>Já cadastrado</b>: mesmo e-mail ou telefone</figcaption></figure>
+    <figure><img src="img/10-cadastro-encerrado.png" alt="Inscrições encerradas"><figcaption><b>Encerrado</b>: quando o operador fecha as inscrições</figcaption></figure>
+  </div>
+  <div class="note"><b>Dica</b>Não é possível se cadastrar duas vezes com o mesmo e-mail ou telefone. Se alguém reclamar que “não consegue”, provavelmente já está cadastrado: basta procurar o nome na tabela do painel.</div>
+</section>
+
+<!-- =============================================================== 7 -->
+<section id="passos">
+  <h2><span class="n">7.</span>Passo a passo do sorteio</h2>
+
+  <h3><span class="n">7.1</span>Preparação (minutos antes)</h3>
+  <ol>
+    <li>Confira no painel que as inscrições estão <b>ABERTAS</b> e o QR aparece no telão.</li>
+    <li>Se a nuvem estiver vazia no começo, adicione alguns <b>fakes</b> (seção 5.4).</li>
+    <li>Confira a quantidade de <b>sorteios extras</b> (seção 5.2).</li>
+    <li><b>Encerre as inscrições</b> um pouco antes do sorteio para ninguém entrar na hora H (botão <i>Inscrições</i> no painel).</li>
+    <li>Telão em tela cheia, com a nuvem visível.</li>
+  </ol>
+
+  <h3><span class="n">7.2</span>Sorteio principal (3 vencedores)</h3>
+  <p>No telão, clique em <b>Sortear 3 vencedores</b>. A animação dura cerca de <b>14 segundos</b> e o resultado já está definido e gravado quando ela começa: ela só encena o que o sistema escolheu.</p>
+
+  <figure class="video">
+    <video controls preload="metadata" poster="img/poster-principal.jpg"><source src="video/sorteio-principal.mp4" type="video/mp4">Seu navegador não reproduz este vídeo.</video>
+    <img class="print-only" src="img/poster-principal.jpg" alt="Sorteio principal">
+    <figcaption>▶ <b>Vídeo 1 — Só o sorteio principal</b> (30 s). Arquivo: <code>video/sorteio-principal.mp4</code>. As legendas do vídeo explicam cada etapa.</figcaption>
+  </figure>
+
+  <table>
+    <tr><th>Tempo</th><th>O que o público vê</th></tr>
+    <tr><td>0–2 s</td><td>Abertura: “SORTEIO — Quem serão os 3 premiados?”</td></tr>
+    <tr><td>2–7,6 s</td><td>Todos os nomes ficam em preto e <b>piscam em vermelho</b>, cada vez mais rápido e depois mais devagar.</td></tr>
+    <tr><td>7,6–9 s</td><td>12 finalistas se destacam em volta da tela.</td></tr>
+    <tr><td>9–12,5 s</td><td>Eliminação: 12 → 6 → 3, nome a nome.</td></tr>
+    <tr><td>~13,6 s</td><td>Revelação: flash, fundo vermelho, confete e os 3 cards.</td></tr>
+  </table>
+
+  <div class="grid2">
+    <figure><img src="img/20-sorteio-abertura.png" alt="Abertura"><figcaption>Abertura</figcaption></figure>
+    <figure><img src="img/21-sorteio-pisca.png" alt="Pisca-pisca"><figcaption>Nomes piscando em vermelho</figcaption></figure>
+    <figure><img src="img/22-sorteio-finalistas.png" alt="Finalistas"><figcaption>12 finalistas</figcaption></figure>
+    <figure><img src="img/23-sorteio-seis.png" alt="Seis finalistas"><figcaption>Restam 6</figcaption></figure>
+    <figure><img src="img/24-sorteio-tres.png" alt="Três finalistas"><figcaption>Restam 3</figcaption></figure>
+    <figure><img src="img/25-revelacao.png" alt="Revelação"><figcaption>Revelação dos 3 vencedores</figcaption></figure>
+  </div>
+  <p>Cada card mostra o <b>número do ganhador</b> (1, 2 e 3), o <b>nome completo</b> e o telefone com só o DDD e os 2 últimos dígitos visíveis, como <code>(11) XXXXX-XX35</code>. Os dados completos (telefone, e-mail e Instagram) só aparecem no painel. A placa do Grupo Muralha fica no canto superior esquerdo enquanto a tela estiver no ar.</p>
+  <div class="note"><b>Dica</b>A tela de parabéns pode ficar no ar o tempo que quiser. Nada acontece sozinho.</div>
+
+  <h3><span class="n">7.3</span>Sorteios extras (1 nome por vez)</h3>
+  <p>Se houver extras configurados, depois da revelação o botão passa a dizer <b>Sortear prêmio extra 1 de N</b>. Cada clique sorteia <b>um nome</b>, que entra numa linha larga <b>abaixo</b> dos anteriores. Os cards dos 3 principais encolhem um pouco para dar espaço, mas todos os nomes continuam grandes, centralizados e na tela. A numeração segue em 4, 5, 6…</p>
+
+  <figure class="video">
+    <video controls preload="metadata" poster="img/poster-extras.jpg"><source src="video/sorteio-com-2-extras.mp4" type="video/mp4">Seu navegador não reproduz este vídeo.</video>
+    <img class="print-only" src="img/poster-extras.jpg" alt="Sorteio com 2 extras">
+    <figcaption>▶ <b>Vídeo 2 — Principal + 2 sorteios extras</b> (52 s). Arquivo: <code>video/sorteio-com-2-extras.mp4</code>.</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <figure><img src="img/26-botao-extra.png" alt="Botão do extra"><figcaption>O botão muda para “Sortear prêmio extra 1 de 2”</figcaption></figure>
+    <figure><img src="img/27-extra-girando.png" alt="Extra girando"><figcaption>Extra 1: os nomes passam rápido e desaceleram</figcaption></figure>
+    <figure><img src="img/28-extra-1.png" alt="Extra 1 pronto"><figcaption>O nome do extra 1 fica fixo (nº 4)</figcaption></figure>
+    <figure><img src="img/29-extras-completos.png" alt="Todos os nomes"><figcaption>Depois do extra 2: os 5 nomes na tela</figcaption></figure>
+  </div>
+  <ol>
+    <li>Cada extra leva cerca de <b>7 segundos</b>. O botão volta sozinho para o próximo.</li>
+    <li>Depois do último extra, o botão some: a rodada acabou.</li>
+    <li>Quer mais um extra na hora? No painel, aumente a quantidade com <b>+</b>. O botão reaparece no telão.</li>
+  </ol>
+
+  <h3><span class="n">7.4</span>Ganhador ausente</h3>
+  <p>Se um ganhador não estiver presente, use o painel (o público não vê nada diferente):</p>
+  <figure style="max-width:520px"><img src="img/16-admin-ultimo-sorteio.png" alt="Último sorteio no painel"></figure>
+  <ol class="legend">
+    <li><b>Ganhador</b>, com telefone, e-mail e Instagram completos para contato.</li>
+    <li><b>Ausente → novo sorteio</b>: sorteia outra pessoa para o mesmo número.</li>
+  </ol>
+  <div class="grid2">
+    <figure><img src="img/30-ausente-troca.png" alt="Troca em andamento"><figcaption>No telão, o card dessa posição gira por uns segundos…</figcaption></figure>
+    <figure><img src="img/31-ausente-novo.png" alt="Novo ganhador"><figcaption>…e para no novo ganhador (aqui, o nº 2).</figcaption></figure>
+  </div>
+  <p>A pessoa ausente continua no registro (marcada como “ausente”) e <b>não concorre de novo</b>. Isso vale para ganhadores do principal e dos extras da rodada atual.</p>
+
+  <h3><span class="n">7.5</span>Limpar o telão e começar nova rodada</h3>
+  <p>Terminou? No painel, clique em <b>Limpar telão</b>. A tela volta para a nuvem, <b>sem os vencedores</b> (eles continuam gravados e não concorrem de novo). O botão <i>Sortear 3 vencedores</i> volta, e dá para fazer outro sorteio principal, com os extras configurados.</p>
+  <figure><img src="img/32-limpar-telao.png" alt="Nuvem depois de limpar"><figcaption>Depois de “Limpar telão”: nuvem sem os vencedores e botão pronto para uma nova rodada.</figcaption></figure>
+</section>
+
+<!-- =============================================================== 8 -->
+<section id="depois">
+  <h2><span class="n">8.</span>Depois do evento</h2>
+  <figure style="max-width:520px"><img src="img/17-admin-exportar.png" alt="Exportar CSV"></figure>
+  <ol class="legend">
+    <li><b>Exportar vencedores (CSV)</b>: todos os sorteios, com data/hora, tipo, número do ganhador e contatos completos.</li>
+    <li><b>Exportar cadastros (CSV)</b>: todos os participantes e se ganharam.</li>
+  </ol>
+  <table>
+    <tr><th>Arquivo</th><th>Colunas</th></tr>
+    <tr><td><code>vencedores-muralha.csv</code></td><td>sorteio · data_hora · tipo (principal/extra) · ganhador_numero · status (vencedor/ausente) · nome_completo · telefone · email · instagram · teste</td></tr>
+    <tr><td><code>participantes-muralha.csv</code></td><td>id · nome_completo · telefone · email · instagram · consentimento_em · cadastrado_em · ganhou · teste</td></tr>
+  </table>
+  <p>Os arquivos abrem direto no Excel ou Google Planilhas (as colunas são separadas por ponto e vírgula e os acentos ficam corretos).</p>
+  <div class="warn"><b>Atenção</b>Os CSVs têm <b>dados pessoais</b> (nome, telefone, e-mail). Guarde em local seguro, use só para a finalidade informada no cadastro e apague quando não forem mais necessários.</div>
+  <ul>
+    <li><b>Contatar os ganhadores:</b> use o painel ou o CSV de vencedores (tem o telefone completo).</li>
+    <li><b>Encerrar:</b> baixe os dois CSVs <b>antes</b> de qualquer limpeza. Depois, se quiser limpar, use <i>Zerar tudo</i>.</li>
+    <li>Os dados ficam guardados no servidor mesmo que o sistema reinicie. Para parar o sistema, veja a seção 11.</li>
+  </ul>
+</section>
+
+<!-- =============================================================== 9 -->
+<section id="regras">
+  <h2><span class="n">9.</span>Regras e transparência</h2>
+  <ul>
+    <li><b>Aleatório de verdade.</b> A escolha é feita no servidor com gerador aleatório criptográfico, não na tela. A animação só mostra o que já foi escolhido.</li>
+    <li><b>Resultado gravado antes da animação.</b> Mesmo que a tela trave ou o navegador seja fechado, o resultado está salvo. Ao atualizar o telão, ele retoma de onde estava.</li>
+    <li><b>Só cadastros reais concorrem.</b> Fakes nunca são sorteados. (Participantes de teste concorrem, por isso devem ser removidos antes do evento.)</li>
+    <li><b>Ninguém ganha duas vezes.</b> Quem já ganhou (principal, extra ou ausente) sai do sorteio.</li>
+    <li><b>Dados protegidos no telão.</b> O público vê o nome completo e só o DDD e os 2 últimos dígitos do telefone.</li>
+    <li><b>Consentimento registrado.</b> O cadastro só é concluído com o aceite, e a data/hora fica gravada.</li>
+    <li><b>Histórico auditável.</b> Cada ganhador fica gravado com data/hora, tipo (principal/extra) e número (1, 2, 3, 4…).</li>
+  </ul>
+</section>
+
+<!-- =============================================================== 10 -->
+<section id="problemas">
+  <h2><span class="n">10.</span>Problemas e soluções</h2>
+  <table>
+    <tr><th>O que acontece</th><th>Causa provável</th><th>O que fazer</th></tr>
+    <tr><td>Telão pede o PIN de novo</td><td>A aba foi fechada ou é outro navegador</td><td>Digite o PIN novamente.</td></tr>
+    <tr><td>“PIN incorreto”</td><td>PIN digitado errado</td><td>Use o olho para conferir o que digitou. Se esqueceu o PIN, quem administra o servidor troca no arquivo <code>.env</code> (veja seção 11).</td></tr>
+    <tr><td>“Muitas tentativas”</td><td>8 PINs errados seguidos</td><td>Aguarde 10 minutos e tente de novo.</td></tr>
+    <tr><td>Telão em branco ou “Reconectando…”</td><td>Internet instável ou túnel fora do ar</td><td>Confira a internet do computador do telão. Ele reconecta sozinho; se não voltar, <kbd>F5</kbd>. Se ainda não, veja <code>docker compose ps</code> (seção 11).</td></tr>
+    <tr><td>O QR code abre um endereço estranho ou não abre</td><td>Endereço do QR configurado errado, ou (se não houver <code>PUBLIC_URL</code>) telão aberto por um endereço interno como <code>localhost</code></td><td>Confira o <code>PUBLIC_URL</code> no <code>.env</code> (veja seção 11). Sem ele, o QR usa o endereço com que o telão foi aberto: abra o telão pelo endereço público do evento.</td></tr>
+    <tr><td>Botão cinza: “Aguardando participantes (n/3)”</td><td>Menos de 3 cadastros reais elegíveis</td><td>Aguarde mais cadastros. (Em ensaio, crie participantes de teste.)</td></tr>
+    <tr><td>O botão sumiu depois da revelação</td><td>Está terminando o extra (≈7 s) ou a rodada acabou</td><td>Espere uns segundos. Se acabou: aumente os extras com <b>+</b> no painel ou use <b>Limpar telão</b> para uma nova rodada.</td></tr>
+    <tr><td>Um fake removido continua na nuvem</td><td>Remoção silenciosa (de propósito)</td><td>Atualize o telão (<kbd>F5</kbd>) quando for conveniente.</td></tr>
+    <tr><td>Participante diz “Você já está participando”</td><td>E-mail ou telefone já cadastrado</td><td>É normal: procure o nome na tabela do painel.</td></tr>
+    <tr><td>Participante vê “Inscrições encerradas”</td><td>As inscrições foram fechadas</td><td>Se for engano, reabra no painel (<i>Inscrições: ENCERRADAS</i>).</td></tr>
+    <tr><td>Ganhador não está presente</td><td>—</td><td>Painel → <b>Ausente → novo sorteio</b> (seção 7.4).</td></tr>
+    <tr><td>Nomes “de teste” apareceram no evento</td><td>O ensaio não foi limpo</td><td>Painel → <b>Remover os de teste</b> (ou, antes de abrir, <b>Zerar tudo</b>).</td></tr>
+    <tr><td>A tela travou no meio da animação</td><td>Navegador sobrecarregado</td><td><kbd>F5</kbd>: o telão retoma de onde estava; o resultado nunca se perde.</td></tr>
+    <tr><td>O servidor reiniciou</td><td>Atualização ou queda de energia</td><td>Os dados são mantidos. Se havia vencedores na tela, eles voltam a aparecer ao atualizar o telão.</td></tr>
+  </table>
+</section>
+
+<!-- =============================================================== 11 -->
+<section id="rapida">
+  <h2><span class="n">11.</span>Referência rápida</h2>
+
+  <h3>Atalhos do telão</h3>
+  <table>
+    <tr><td><kbd>F</kbd> ou duplo clique</td><td>Entra/sai da tela cheia</td></tr>
+    <tr><td><kbd>F5</kbd></td><td>Atualiza (retoma o estado; fakes removidos somem)</td></tr>
+    <tr><td>Mover o mouse</td><td>Mostra o cursor (some sozinho depois de alguns segundos)</td></tr>
+  </table>
+
+  <h3>Limites</h3>
+  <table>
+    <tr><td>Sorteios extras</td><td>0 a 8, de 1 nome cada</td></tr>
+    <tr><td>Fakes</td><td>até 200 por vez</td></tr>
+    <tr><td>Participantes de teste</td><td>até 500 de uma vez · até 100 “chegando aos poucos”</td></tr>
+    <tr><td>Duração</td><td>Principal ≈ 14 s · cada extra ≈ 7 s</td></tr>
+    <tr><td>Mínimo para sortear</td><td>3 cadastros reais elegíveis</td></tr>
+  </table>
+
+  <h3>Administração do servidor (quem instalou)</h3>
+  <p>O sistema roda em Docker. Na pasta do projeto:</p>
+<pre><code>docker compose ps               # ver se app e cloudflared estão no ar
+docker compose logs -f          # acompanhar os logs
+docker compose restart app      # reiniciar só o sistema (dados mantidos)
+docker compose stop             # parar tudo
+docker compose up -d --build    # subir / atualizar
+</code></pre>
+  <ul>
+    <li><b>PIN do operador e token do túnel:</b> arquivo <code>.env</code> (<code>ADMIN_PIN</code> e <code>TUNNEL_TOKEN</code>). Depois de alterar, rode <code>docker compose up -d</code>.</li>
+    <li><b>Endereço do QR code:</b> <code>PUBLIC_URL</code> no <code>.env</code> (opcional).</li>
+    <li>Passo a passo de instalação: arquivo <code>DEPLOY.md</code>.</li>
+  </ul>
+
+  <h3>Glossário</h3>
+  <ul>
+    <li><b>Nuvem</b>: a tela com todos os nomes dos participantes.</li>
+    <li><b>Rodada</b>: um sorteio principal e os extras que vêm depois dele.</li>
+    <li><b>Elegível</b>: cadastro real que ainda não ganhou.</li>
+    <li><b>Fake</b>: nome de preenchimento visual, sem chance de ganhar.</li>
+  </ul>
+</section>
+
+</main>
+</div>
+<footer>Manual de Operação · Sorteio de Brindes · Grupo Muralha · v1.0 · 05/11/2026</footer>
+</body>
+</html>
