@@ -22,10 +22,7 @@
   /* ---------- capa ---------- */
   .cover { background: radial-gradient(120% 140% at 50% 0%, var(--red), var(--red-deep)); color: #fff; padding: 56px 24px 64px; text-align: center; }
   .cover .plate { display: inline-flex; align-items: center; gap: 14px; background: #fff; color: var(--ink); padding: 14px 24px; border-top: 6px solid var(--ink); box-shadow: 0 14px 30px -14px rgba(0,0,0,.5); text-align: left; }
-  .cover .plate img { height: 64px; width: auto; }
-  .cover .plate small { display: block; font-size: 12px; letter-spacing: .24em; font-weight: 500; }
-  .cover .plate strong { display: block; font-size: 32px; letter-spacing: .05em; font-weight: 800; line-height: 1.1; }
-  .cover .plate em { display: block; font-style: normal; font-size: 11px; letter-spacing: .2em; font-weight: 700; color: var(--red-deep); }
+  .cover .plate img { height: 84px; width: auto; display: block; }
   .cover h1 { margin: 36px 0 8px; font-size: clamp(30px, 5vw, 52px); line-height: 1.05; letter-spacing: -.02em; font-weight: 800; }
   .cover p { margin: 0; opacity: .92; font-size: 18px; }
   .cover .ver { margin-top: 22px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
@@ -107,10 +104,10 @@
 <body>
 
 <header class="cover">
-  <div class="plate"><img src="img/logo-shield.svg" alt=""><div><small>GRUPO</small><strong>MURALHA</strong><em>DESDE 1993</em></div></div>
+  <div class="plate"><img src="img/logo-muralha.png" alt="Grupo Muralha — desde 1993"></div>
   <h1>Manual de Operação</h1>
   <p>Sorteio de brindes ao vivo — nuvem de participantes, 3 vencedores e sorteios extras</p>
-  <div class="ver">Versão 1.0 · 05/11/2026</div>
+  <div class="ver">Versão 1.1 · 07/11/2026</div>
   <p style="margin-top:18px"><a href="Manual-Operacao-Sorteio-Muralha.pdf" style="color:#fff;font-weight:700;border:2px solid #fff;padding:8px 18px;text-decoration:none;display:inline-block">Baixar em PDF</a></p>
 </header>
 
@@ -158,7 +155,7 @@
   <ul>
     <li>Um computador ligado ao projetor/TV, com o navegador <b>Chrome</b> aberto no telão em <b>tela cheia</b>.</li>
     <li>Um notebook (pode ser o mesmo, em outra janela) com o <b>painel</b> aberto.</li>
-    <li>Internet estável nos dois e o <b>PIN do operador</b> (definido por quem instalou o sistema).</li>
+    <li>Internet estável nos dois e o <b>PIN do operador</b> (fornecido pelo administrador do servidor).</li>
   </ul>
   <div class="note"><b>Dica</b>O sistema funciona em qualquer navegador moderno, mas o Chrome é o mais testado. Mantenha o notebook na tomada e desative a suspensão de tela.</div>
 </section>
@@ -211,7 +208,7 @@
   </figure>
   <ol class="legend">
     <li><b>Logotipo</b> do Grupo Muralha.</li>
-    <li><b>Contador “concorrendo”</b>: total de nomes na nuvem (cadastros reais + fakes). Cai quando os vencedores saem da nuvem.</li>
+    <li><b>Contador “concorrendo”</b>: total de nomes na nuvem (cadastros reais + fakes). Cai quando os vencedores saem da nuvem. Ele pode ser <b>desligado por completo</b> por uma variável do administrador no servidor; nesse caso o canto superior direito fica vazio e a nuvem aproveita o espaço.</li>
     <li><b>QR code</b> para o público se cadastrar, com o endereço escrito embaixo.</li>
     <li><b>Botão do operador</b>: é aqui que se dispara o sorteio.</li>
   </ol>
@@ -307,7 +304,7 @@
 <!-- =============================================================== 6 -->
 <section id="celular">
   <h2><span class="n">6.</span>O que o participante vê no celular</h2>
-  <p>Ao escanear o QR, o participante preenche: <b>nome completo</b>, <b>telefone/WhatsApp com DDD</b>, <b>e-mail</b>, <b>Instagram</b> (opcional) e aceita o termo de uso dos dados (LGPD).</p>
+  <p>Ao escanear o QR, o participante preenche: <b>nome completo</b>, <b>telefone/WhatsApp com DDD</b>, <b>e-mail</b>, <b>Instagram</b> (opcional) e marca o aceite do uso dos dados (LGPD). No fim do formulário, abaixo do botão, aparece a frase <i>“Ao informar meus dados, estou ciente das diretrizes da Política de Privacidade”</i>: o link <b>Política de Privacidade</b> abre, em outra aba, a política de LGPD no site da Muralha (<code>muralha.com.br/lgpd.php</code>), sem o participante perder o que já digitou.</p>
   <div class="phones">
     <figure><img src="img/06-cadastro-form.png" alt="Formulário"><figcaption><b>Formulário</b></figcaption></figure>
     <figure><img src="img/07-cadastro-erros.png" alt="Erros de preenchimento"><figcaption><b>Campos faltando</b>: avisa o que corrigir</figcaption></figure>
@@ -332,29 +329,26 @@
   </ol>
 
   <h3><span class="n">7.2</span>Sorteio principal (3 vencedores)</h3>
-  <p>No telão, clique em <b>Sortear 3 vencedores</b>. A animação dura cerca de <b>14 segundos</b> e o resultado já está definido e gravado quando ela começa: ela só encena o que o sistema escolheu.</p>
+  <p>No telão, clique em <b>Sortear 3 vencedores</b>. A animação dura cerca de <b>9 segundos</b> e o resultado já está definido e gravado quando ela começa: ela só encena o que o sistema escolheu.</p>
 
   <figure class="video">
     <video controls preload="metadata" poster="img/poster-principal.jpg"><source src="video/sorteio-principal.mp4" type="video/mp4">Seu navegador não reproduz este vídeo.</video>
     <img class="print-only" src="img/poster-principal.jpg" alt="Sorteio principal">
-    <figcaption>▶ <b>Vídeo 1 — Só o sorteio principal</b> (30 s). Arquivo: <code>video/sorteio-principal.mp4</code>. As legendas do vídeo explicam cada etapa.</figcaption>
+    <figcaption>▶ <b>Vídeo 1 — Só o sorteio principal</b> (24 s). Arquivo: <code>video/sorteio-principal.mp4</code>. As legendas do vídeo explicam cada etapa.</figcaption>
   </figure>
 
   <table>
     <tr><th>Tempo</th><th>O que o público vê</th></tr>
     <tr><td>0–2 s</td><td>Abertura: “SORTEIO — Quem serão os 3 premiados?”</td></tr>
     <tr><td>2–7,6 s</td><td>Todos os nomes ficam em preto e <b>piscam em vermelho</b>, cada vez mais rápido e depois mais devagar.</td></tr>
-    <tr><td>7,6–9 s</td><td>12 finalistas se destacam em volta da tela.</td></tr>
-    <tr><td>9–12,5 s</td><td>Eliminação: 12 → 6 → 3, nome a nome.</td></tr>
-    <tr><td>~13,6 s</td><td>Revelação: flash, fundo vermelho, confete e os 3 cards.</td></tr>
+    <tr><td>7,6–8,6 s</td><td>Um instante de tensão: a tela se acende em vermelho e os nomes esmaecem.</td></tr>
+    <tr><td>~8,6 s</td><td>Revelação: flash, fundo vermelho, confete e os 3 cards.</td></tr>
   </table>
 
   <div class="grid2">
     <figure><img src="img/20-sorteio-abertura.png" alt="Abertura"><figcaption>Abertura</figcaption></figure>
     <figure><img src="img/21-sorteio-pisca.png" alt="Pisca-pisca"><figcaption>Nomes piscando em vermelho</figcaption></figure>
-    <figure><img src="img/22-sorteio-finalistas.png" alt="Finalistas"><figcaption>12 finalistas</figcaption></figure>
-    <figure><img src="img/23-sorteio-seis.png" alt="Seis finalistas"><figcaption>Restam 6</figcaption></figure>
-    <figure><img src="img/24-sorteio-tres.png" alt="Três finalistas"><figcaption>Restam 3</figcaption></figure>
+    <figure><img src="img/22-sorteio-tensao.png" alt="Instante de tensão"><figcaption>Instante de tensão antes da revelação</figcaption></figure>
     <figure><img src="img/25-revelacao.png" alt="Revelação"><figcaption>Revelação dos 3 vencedores</figcaption></figure>
   </div>
   <p>Cada card mostra o <b>número do ganhador</b> (1, 2 e 3), o <b>nome completo</b> e o telefone com só o DDD e os 2 últimos dígitos visíveis, como <code>(11) XXXXX-XX35</code>. Os dados completos (telefone, e-mail e Instagram) só aparecem no painel. A placa do Grupo Muralha fica no canto superior esquerdo enquanto a tela estiver no ar.</p>
@@ -366,7 +360,7 @@
   <figure class="video">
     <video controls preload="metadata" poster="img/poster-extras.jpg"><source src="video/sorteio-com-2-extras.mp4" type="video/mp4">Seu navegador não reproduz este vídeo.</video>
     <img class="print-only" src="img/poster-extras.jpg" alt="Sorteio com 2 extras">
-    <figcaption>▶ <b>Vídeo 2 — Principal + 2 sorteios extras</b> (52 s). Arquivo: <code>video/sorteio-com-2-extras.mp4</code>.</figcaption>
+    <figcaption>▶ <b>Vídeo 2 — Principal + 2 sorteios extras</b> (46 s). Arquivo: <code>video/sorteio-com-2-extras.mp4</code>.</figcaption>
   </figure>
 
   <div class="grid2">
@@ -417,7 +411,7 @@
   <ul>
     <li><b>Contatar os ganhadores:</b> use o painel ou o CSV de vencedores (tem o telefone completo).</li>
     <li><b>Encerrar:</b> baixe os dois CSVs <b>antes</b> de qualquer limpeza. Depois, se quiser limpar, use <i>Zerar tudo</i>.</li>
-    <li>Os dados ficam guardados no servidor mesmo que o sistema reinicie. Para parar o sistema, veja a seção 11.</li>
+    <li>Os dados ficam guardados no servidor mesmo que o sistema reinicie. Para parar ou reiniciar o sistema, fale com o administrador do servidor.</li>
   </ul>
 </section>
 
@@ -431,6 +425,7 @@
     <li><b>Ninguém ganha duas vezes.</b> Quem já ganhou (principal, extra ou ausente) sai do sorteio.</li>
     <li><b>Dados protegidos no telão.</b> O público vê o nome completo e só o DDD e os 2 últimos dígitos do telefone.</li>
     <li><b>Consentimento registrado.</b> O cadastro só é concluído com o aceite, e a data/hora fica gravada.</li>
+    <li><b>Sem cookies e sem terceiros.</b> O sistema não usa cookies nem serviços externos (a fonte das telas é servida pelo próprio sistema), por isso não há banner de cookies. A frase de ciência da Política de Privacidade fica no fim do cadastro.</li>
     <li><b>Histórico auditável.</b> Cada ganhador fica gravado com data/hora, tipo (principal/extra) e número (1, 2, 3, 4…).</li>
   </ul>
 </section>
@@ -441,10 +436,10 @@
   <table>
     <tr><th>O que acontece</th><th>Causa provável</th><th>O que fazer</th></tr>
     <tr><td>Telão pede o PIN de novo</td><td>A aba foi fechada ou é outro navegador</td><td>Digite o PIN novamente.</td></tr>
-    <tr><td>“PIN incorreto”</td><td>PIN digitado errado</td><td>Use o olho para conferir o que digitou. Se esqueceu o PIN, quem administra o servidor troca no arquivo <code>.env</code> (veja seção 11).</td></tr>
+    <tr><td>“PIN incorreto”</td><td>PIN digitado errado</td><td>Use o olho para conferir o que digitou. Se esqueceu o PIN, peça ao administrador do servidor para trocá-lo (é uma variável do administrador no servidor).</td></tr>
     <tr><td>“Muitas tentativas”</td><td>8 PINs errados seguidos</td><td>Aguarde 10 minutos e tente de novo.</td></tr>
-    <tr><td>Telão em branco ou “Reconectando…”</td><td>Internet instável ou túnel fora do ar</td><td>Confira a internet do computador do telão. Ele reconecta sozinho; se não voltar, <kbd>F5</kbd>. Se ainda não, veja <code>docker compose ps</code> (seção 11).</td></tr>
-    <tr><td>O QR code abre um endereço estranho ou não abre</td><td>Endereço do QR configurado errado, ou (se não houver <code>PUBLIC_URL</code>) telão aberto por um endereço interno como <code>localhost</code></td><td>Confira o <code>PUBLIC_URL</code> no <code>.env</code> (veja seção 11). Sem ele, o QR usa o endereço com que o telão foi aberto: abra o telão pelo endereço público do evento.</td></tr>
+    <tr><td>Telão em branco ou “Reconectando…”</td><td>Internet instável ou servidor fora do ar</td><td>Confira a internet do computador do telão. Ele reconecta sozinho; se não voltar, <kbd>F5</kbd>. Se ainda não, acione o administrador do servidor.</td></tr>
+    <tr><td>O QR code abre um endereço estranho ou não abre</td><td>Endereço do QR configurado errado, ou (se não houver endereço público configurado) telão aberto por um endereço interno como <code>localhost</code></td><td>Peça ao administrador do servidor para conferir o endereço público do evento (é uma variável do administrador no servidor). Sem ele, o QR usa o endereço com que o telão foi aberto: abra o telão pelo endereço público do evento.</td></tr>
     <tr><td>Botão cinza: “Aguardando participantes (n/3)”</td><td>Menos de 3 cadastros reais elegíveis</td><td>Aguarde mais cadastros. (Em ensaio, crie participantes de teste.)</td></tr>
     <tr><td>O botão sumiu depois da revelação</td><td>Está terminando o extra (≈7 s) ou a rodada acabou</td><td>Espere uns segundos. Se acabou: aumente os extras com <b>+</b> no painel ou use <b>Limpar telão</b> para uma nova rodada.</td></tr>
     <tr><td>Um fake removido continua na nuvem</td><td>Remoção silenciosa (de propósito)</td><td>Atualize o telão (<kbd>F5</kbd>) quando for conveniente.</td></tr>
@@ -473,23 +468,9 @@
     <tr><td>Sorteios extras</td><td>0 a 8, de 1 nome cada</td></tr>
     <tr><td>Fakes</td><td>até 200 por vez</td></tr>
     <tr><td>Participantes de teste</td><td>até 500 de uma vez · até 100 “chegando aos poucos”</td></tr>
-    <tr><td>Duração</td><td>Principal ≈ 14 s · cada extra ≈ 7 s</td></tr>
+    <tr><td>Duração</td><td>Principal ≈ 9 s · cada extra ≈ 7 s</td></tr>
     <tr><td>Mínimo para sortear</td><td>3 cadastros reais elegíveis</td></tr>
   </table>
-
-  <h3>Administração do servidor (quem instalou)</h3>
-  <p>O sistema roda em Docker. Na pasta do projeto:</p>
-<pre><code>docker compose ps               # ver se app e cloudflared estão no ar
-docker compose logs -f          # acompanhar os logs
-docker compose restart app      # reiniciar só o sistema (dados mantidos)
-docker compose stop             # parar tudo
-docker compose up -d --build    # subir / atualizar
-</code></pre>
-  <ul>
-    <li><b>PIN do operador e token do túnel:</b> arquivo <code>.env</code> (<code>ADMIN_PIN</code> e <code>TUNNEL_TOKEN</code>). Depois de alterar, rode <code>docker compose up -d</code>.</li>
-    <li><b>Endereço do QR code:</b> <code>PUBLIC_URL</code> no <code>.env</code> (opcional).</li>
-    <li>Passo a passo de instalação: arquivo <code>DEPLOY.md</code>.</li>
-  </ul>
 
   <h3>Glossário</h3>
   <ul>
@@ -502,6 +483,6 @@ docker compose up -d --build    # subir / atualizar
 
 </main>
 </div>
-<footer>Manual de Operação · Sorteio de Brindes · Grupo Muralha · v1.0 · 05/11/2026</footer>
+<footer>Manual de Operação · Sorteio de Brindes · Grupo Muralha · v1.1 · 07/11/2026</footer>
 </body>
 </html>
